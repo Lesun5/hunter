@@ -1,0 +1,254 @@
+@font-face {
+  font-family: "GDisplay";
+  src: url("../fonts/GDisplay-Regular.eot");
+  src: local("☺"), url("../fonts/GDisplay-Regular.woff") format("woff"),
+    url("../fonts/GDisplay-Regular.ttf") format("truetype"),
+    url("../fonts/GDisplay-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  counter-reset: killer;
+  background-image: url("/img/Games_Duck_Hunt_Nintendo_Dendy_Nes_025749_9.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 bottom;
+  min-height: 100%;
+  position: relative;
+  cursor: url("/img/curs34.png"), crosshair;
+  overflow: hidden;
+}
+
+.duck input[type="checkbox"]:checked {
+  counter-increment: killer;
+}
+
+input[type="checkbox"]:checked + label {
+  display: none;
+}
+
+.summa::after {
+  content: counter(killer);
+}
+
+.summa {
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+  font-family: "GDisplay";
+  font-size: 60px;
+  font-weight: bold;
+  color: rgb(231, 229, 226);
+  text-shadow: 0 0 10px rgb(42, 25, 13);
+  transform: translateX(-50%);
+}
+
+.duck {
+  width: 62px;
+  height: 56px;
+  position: relative;
+  overflow: hidden;
+  left: -80px;
+  top: 450px;
+}
+
+input {
+  position: absolute;
+  left: -50px;
+}
+
+label {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-image: url(/img/duck_hunt_bird_big2.gif);
+  background-repeat: no-repeat;
+  cursor: url("/img/curs34.png"), crosshair;
+}
+
+.duck1 {
+  animation: fly1 5s 0.5s;
+}
+.duck2 {
+  animation: fly2 10s 3s;
+}
+.duck3 {
+  animation: fly1 8s 5s;
+}
+.duck4 {
+  animation: fly3 8s 5s;
+  animation-direction: alternate;
+}
+
+.duck5 {
+  animation: fly4 9s 7s;
+}
+
+@keyframes fly1 {
+  0% {
+    left: 5%;
+    top: 400px;
+  }
+  25% {
+    left: 25%;
+    top: 500px;
+  }
+  50% {
+    left: 50%;
+    top: 120px;
+  }
+  75% {
+    left: 75%;
+    top: 600px;
+  }
+  100% {
+    left: 110%;
+    top: 250px;
+  }
+}
+
+.duck {
+  animation-iteration-count: 3;
+}
+
+@keyframes fly2 {
+  0% {
+    left: 7%;
+    top: 300px;
+  }
+  25% {
+    left: 35%;
+    top: 557px;
+  }
+  50% {
+    left: 45%;
+    top: 200px;
+  }
+  90% {
+    left: 80%;
+    top: 560px;
+  }
+  100% {
+    left: 110%;
+    top: 250px;
+  }
+}
+
+@keyframes fly3 {
+  0% {
+    left: 10%;
+    top: 452px;
+  }
+  25% {
+    left: 7%;
+    top: 600px;
+  }
+  50% {
+    left: 20%;
+    top: 452px;
+  }
+  90% {
+    left: 70%;
+    top: 500px;
+  }
+  100% {
+    left: 110%;
+    top: 320px;
+  }
+}
+
+@keyframes fly4 {
+  0% {
+    left: 4%;
+    top: 250px;
+  }
+  25% {
+    left: 18%;
+    top: 500px;
+    /* transform: rotate(180); */
+  }
+  50% {
+    left: 40%;
+    top: 200px;
+  }
+  90% {
+    left: 70%;
+    top: 500px;
+  }
+  100% {
+    left: 100%;
+    top: 170px;
+  }
+}
+
+.info {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 50;
+}
+.info__icon {
+  display: inline-block;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  font-size: 32px;
+  font-family: "Roboto";
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  line-height: 34px;
+  position: relative;
+  z-index: 2;
+}
+.info__icon:hover {
+  color: rgb(207, 219, 226);
+}
+.info__body {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(47, 77, 133);
+  width: 250px;
+  border-radius: 0 0 18px 0;
+  padding: 40px 5px 35px 20px;
+}
+.info__body:target {
+  display: block;
+}
+.info__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 18px;
+  color: rgb(238, 105, 105);
+  font-family: "Roboto";
+  text-decoration: none;
+}
+.info__close:hover {
+  color: rgb(197, 49, 49);
+}
+.info__text {
+  padding: 0px 10px 0px 0px;
+  color: #fff;
+  font-family: "Roboto";
+}
+.info__text p {
+  margin: 0px 0px 10px 0px;
+}
